@@ -9,8 +9,9 @@ define("Backbone.ModelRegistry", [
 	"backbone"
 ], function(_, Backbone) {
 
-	Backbone.ModelRegistry = function(options) {
-		this.collections = (options && options.collections) || [];
+	Backbone.ModelRegistry = function(collections) {
+		this.collections = _.isArray(collections) ? collections :
+			collections ? [collections] : [];
 	};
 
 	Backbone.ModelRegistry.prototype = {
@@ -31,6 +32,8 @@ define("Backbone.ModelRegistry", [
 				}, this);
 		}
 	};
+
+	return Backbone.ModelRegistry;
 });
 
 
