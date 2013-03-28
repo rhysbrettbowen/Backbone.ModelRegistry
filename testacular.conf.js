@@ -28,8 +28,7 @@ exclude = [
 ];
 
 preprocessors = {
-  '**/advice.js': 'coverage',
-  '**/mixin.js': 'coverage'
+  '**/modelRegistry.js': 'coverage'
 };
 
 
