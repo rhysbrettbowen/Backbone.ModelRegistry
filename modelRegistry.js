@@ -1,10 +1,12 @@
+// v1.0.0
+
 // ==========================================
 // Copyright 2013 Dataminr
 // Licensed under The MIT License
 // http://opensource.org/licenses/MIT
 // ==========================================
 
-define("Backbone.ModelRegistry", [
+define([
 	"underscore",
 	"backbone"
 ], function(_, Backbone) {
@@ -25,10 +27,10 @@ define("Backbone.ModelRegistry", [
 			this.collections = _.without(this.collections,  collection);
 		},
 
-		getModel: function(key) {
+		getModel: function(key, idAttributes) {
 			return _.find(_.flatten(_.pluck(this.collections, "models")),
 				function(model) {
-					return model.get(model.idAttribute) == key;
+					return model.get(idAttributes || model.idAttribute) == key;
 				}, this);
 		}
 	};

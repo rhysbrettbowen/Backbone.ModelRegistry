@@ -53,3 +53,7 @@ var RegisteredCollection = Backbone.Collection.extend().mixin([
 	modelStore: registry
 });
 ```
+#changelog
+
+##v1.0.0
+- initial versionning
